@@ -95,12 +95,12 @@ def home_tab():
                             html.Div(
                                 [
                                     html.Div(html.H3("Guidelines: "),style={"font-size":"5.0rem"}),
-                                    html.Div(html.H5("1.")),
-                                    html.Div(html.H5("2.")),
-                                    html.Div(html.H5("3.")),
-                                    html.Div(html.H5("4.")),
-                                    html.Div(html.H5("5.")),
-                                    html.Div(html.H5("6.")),
+                                    html.Div(html.H5("1. Choose a model from which the prediction will be computed.")),
+                                    html.Div(html.H5("2. Type your own personalized sports commentary or click on the 'Generate' button to generate a real live sports commentary at random.")),
+                                    html.Div(html.H3("Results:"), style={"font-size":"5.0rem"}),
+                                    html.Div(html.H5(" - The prediction category is computed and displayed.")),
+                                    html.Div(html.H5(" - The confidence of the prediction is also displayed below the prediction.")),
+                                    html.Div(html.H5(" - An audio of the sports commentary is played out loud, please make sure to turn up your volume.")),
                                 ],className="spaced_div pretty_container" 
                             ),
                             html.Div(
