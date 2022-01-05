@@ -33,8 +33,6 @@ def load_contents():
     stats_file = "./data/model_stats.csv"
     results_data = pd.read_csv(events_file, index_col=0)
     model_stats = pd.read_csv(stats_file, index_col=0)
-    print(len(results_data))
-    print(len(model_stats))
     return results_data, model_stats
 
 
@@ -86,3 +84,27 @@ def finalpreprocess(string):
     cleaned_text = nltk.word_tokenize(cleaned_text)
     cleaned_text = tfidf.transform(cleaned_text)
     return  cleaned_text
+
+
+import google.cloud.texttospeech as tts
+
+
+def text_to_wav(text, voice_name="en-GB-Wavenet-B"):
+    import os
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=r".\utils\abiding-triode-331519-1dabdd80b38a.json"
+    language_code = "-".join(voice_name.split("-")[:2])
+    text_input = tts.SynthesisInput(text=text)
+    voice_params = tts.VoiceSelectionParams(
+        language_code=language_code, name=voice_name
+    )
+    audio_config = tts.AudioConfig(speaking_rate=1.2, pitch=3.20, audio_encoding=tts.AudioEncoding.LINEAR16)
+
+    client = tts.TextToSpeechClient()
+    response = client.synthesize_speech(
+        input=text_input, voice=voice_params, audio_config=audio_config
+    )
+
+    filename = f"./assets/{language_code}.wav"
+    with open(filename, "wb") as out:
+        out.write(response.audio_content)
+        print(f'Generated speech saved to "{filename}"')

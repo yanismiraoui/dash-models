@@ -15,7 +15,7 @@ test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
 def layout():
     return html.Div(
         [
-            html.Div([html.Center([html.H1("Analyzing sports commentary in order to automatically recognize events and extract insights"),
+            html.Div([html.Center([html.H1("Analyzing sports commentary to recognize events and extract insights"),
             html.Div(html.H5("Yanis Miraoui"),style={"color":"blue"}),
             html.Div(html.H5("21-908-504 / ETH Zürich"),style={"color":"blue"}),
             html.Div(html.H5("ymiraoui@student.ethz.ch"),style={"color":"blue"}),
@@ -50,7 +50,6 @@ def home_tab():
                                         value="",
                                         id="perso_commentary",
                                     )], style=dict(display='flex')),
-                                    html.Button('Compute prediction', id='submit_val_perso', n_clicks=0),
                                     html.Div(id="output")
                                 ],className="spaced_div"
                             ),
@@ -59,7 +58,6 @@ def home_tab():
                                     html.Br(),
                                     html.Br(),
                                     html.Div(html.I("Click this button if you want to use an existing live sports commentary at random :\n")),
-                                    html.Div(html.Button('Generate and Compute prediction', id='submit_val_random', n_clicks=0)),
                                     html.Div([
                                     dcc.Input(
                                         placeholder="Random commentary will appear here",
@@ -67,6 +65,7 @@ def home_tab():
                                         value="",
                                         id="random_commentary",
                                     )], style=dict(display='flex')),
+                                    html.Div(html.Button('Generate sports commentary', id='submit_val_random', n_clicks=0)),
                                     html.Div(id="output_random")
                                 ],className="spaced_div"
                             ),
@@ -80,6 +79,7 @@ def home_tab():
                                                 html.Div(html.Center([],id="result_text",style={"font-size":"5.0rem"})), 
                                                 html.Br(),
                                                 html.Div([],id="result_conf",style={"color":"blue", "font-size":"2.0rem"})]),
+                                                html.Div(html.Center([html.Audio(id='audio-out', preload='auto', autoPlay=True)]))
                                 ],className="spaced_div pretty_container" 
                             ),
                             html.Div(
