@@ -1,3 +1,4 @@
-# ROTO GRINDER
+# Dashboard : Analyzing sports commentary in order to automatically recognize events and extract insights
 
-![alt text](https://github.com/yanismiraoui/roto-grinder/blob/master/assets/meat-grinder-1.jpg)
+
+This dashboard aims to show how perform the classification models studied in the research paper when given a real live sports commentary sentence or a personnalized one.
