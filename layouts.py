@@ -85,7 +85,7 @@ def home_tab():
                             html.Div(
                                 [
                                     html.Div(html.H4("Confusion matrix: "),style={"font-size":"3.0rem"}),
-                                    html.Div([html.Img(src='data:image/png;base64,{}'.format(test_base64))]),
+                                    html.Div(html.Img(id="conf_matrix", height=330),  style={'height':'1%', 'width':'1%'}),
                                 ],className="spaced_div pretty_container" 
                             )
                         ],

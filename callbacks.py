@@ -61,6 +61,7 @@ def callbacks(app):
             Output("result_text","children"),
             Output("result_conf","children"),
             Output("audio-out", "src"),
+            Output("conf_matrix", "src"),
         ],
         [
             Input("perso_commentary", "value"),
@@ -73,14 +74,18 @@ def callbacks(app):
     )
     def display_results_summary(perso_commentary, random_commentary, results_data, model_stats, model_name):
         audio = ""
+        src = ""
         if not results_data or not model_stats:
             return dash.no_update, dash.no_update, dash.no_update
         results_data = pd.DataFrame(results_data)
         model_stats = pd.DataFrame(model_stats)
         if model_name:
             model = pickle.load(open(f'./models/model_{model_name}.pickle', 'rb'))
+            test_png = f'./assets/conf_{model_name}.png'
+            test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
+            src = 'data:image/png;base64,{}'.format(test_base64)
         else:
-            return ["No model specified", "", ""]
+            return ["No model specified", "", "", src]
         if len(perso_commentary) > 15:
             time.sleep(3)
             text_to_wav(perso_commentary)
@@ -104,7 +109,7 @@ def callbacks(app):
             prediction = model.predict(finalpreprocess(random_commentary))
             proba =  model.predict_proba(finalpreprocess(random_commentary))
         else:
-            return ["No text specified", "", ""]
+            return ["No text specified", "", "", src]
         num_to_cat = {  1:"Attempt", 
                         2:"Corner",
                         3:"Foul", 
@@ -125,5 +130,6 @@ def callbacks(app):
 
         return [str(event_type), 
                 f"Confidence of the prediction: {round(confidence,2)}%",
-                audio
+                audio,
+                src
         ]
