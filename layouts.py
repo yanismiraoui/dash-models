@@ -31,6 +31,7 @@ def home_tab():
                             ),
                             html.Div(
                                 [
+                                    html.I("Choose the classification model below:\n"),
                                     dcc.Dropdown(
                                         placeholder="Classification models",
                                         id="model_choices",
@@ -103,6 +104,7 @@ def home_tab():
                                     html.Div(html.H5(" - The prediction category is computed and displayed.")),
                                     html.Div(html.H5(" - The confidence of the prediction is also displayed below the prediction.")),
                                     html.Div(html.H5(" - An audio of the sports commentary is played out loud, please make sure to turn up your volume.")),
+                                    html.Div(html.H5("PLEASE NOTE: the website can sometimes be slow to load the text and the predictions. Please wait a few seconds for the content to load."),style={"color":"red"}),
                                 ],className="spaced_div pretty_container" 
                             ),
                             html.Div(
