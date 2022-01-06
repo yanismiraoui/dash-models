@@ -26,6 +26,7 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 nltk.download('stopwords')
+nltk.download('omw-1.4')
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -92,7 +93,7 @@ import google.cloud.texttospeech as tts
 
 def text_to_wav(text, voice_name="en-GB-Wavenet-B"):
     import os
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=r".\utils\abiding-triode-331519-1dabdd80b38a.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=r"./utils/abiding-triode-331519-1dabdd80b38a.json"
     language_code = "-".join(voice_name.split("-")[:2])
     text_input = tts.SynthesisInput(text=text)
     voice_params = tts.VoiceSelectionParams(
