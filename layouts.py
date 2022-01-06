@@ -49,7 +49,8 @@ def home_tab():
                                         type="text",
                                         value="",
                                         id="perso_commentary",
-                                    )], style=dict(display='flex')),
+                                        style={'width': '90%'}
+                                    )],),
                                     html.Div(id="output")
                                 ],className="spaced_div"
                             ),
@@ -64,7 +65,8 @@ def home_tab():
                                         type="text",
                                         value="",
                                         id="random_commentary",
-                                    )], style=dict(display='flex')),
+                                        style={'width': '90%'}
+                                    )],),
                                     html.Div(html.Button('Generate sports commentary', id='submit_val_random', n_clicks=0)),
                                     html.Div(id="output_random")
                                 ],className="spaced_div"

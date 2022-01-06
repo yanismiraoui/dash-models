@@ -14,6 +14,7 @@ import pickle
 #Essential modules
 import pandas as pd
 import numpy as np
+import time
 
 #For text pre-processing
 import nltk
@@ -108,3 +109,4 @@ def text_to_wav(text, voice_name="en-GB-Wavenet-B"):
     with open(filename, "wb") as out:
         out.write(response.audio_content)
         print(f'Generated speech saved to "{filename}"')
+    time.sleep(3)
