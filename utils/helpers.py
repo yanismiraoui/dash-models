@@ -80,8 +80,11 @@ def lemmatizer(string):
     a=[wl.lemmatize(tag[0], get_wordnet_pos(tag[1])) for idx, tag in enumerate(word_pos_tags)] # Map the position tag and lemmatize the word/token
     return " ".join(a)
 
-def finalpreprocess(string):
-    tfidf = pickle.load(open(f'./models/tfidf.pkl', 'rb'))
+def finalpreprocess(string, model):
+    if model == "XGBoost":
+        tfidf = pickle.load(open(f'./models/tfidf_xgb.pkl', 'rb'))
+    else:
+        tfidf = pickle.load(open(f'./models/tfidf.pkl', 'rb'))
     cleaned_text =  lemmatizer(stopword(preprocess(string)))
     cleaned_text = nltk.word_tokenize(cleaned_text)
     cleaned_text = tfidf.transform(cleaned_text)

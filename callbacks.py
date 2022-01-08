@@ -96,8 +96,8 @@ def callbacks(app):
             b64 = base64.b64encode(buffer.getvalue())
             audio = "data:audio/x-wav;base64," + b64.decode("ascii")
 
-            prediction = model.predict(finalpreprocess(perso_commentary))
-            proba = model.predict_proba(finalpreprocess(perso_commentary))
+            prediction = model.predict(finalpreprocess(perso_commentary, model_name))
+            proba = model.predict_proba(finalpreprocess(perso_commentary, model_name))
         elif len(random_commentary) > 10:
             text_to_wav(random_commentary)
             buffer = io.BytesIO()
@@ -106,8 +106,8 @@ def callbacks(app):
             b64 = base64.b64encode(buffer.getvalue())
             audio = "data:audio/x-wav;base64," + b64.decode("ascii")
 
-            prediction = model.predict(finalpreprocess(random_commentary))
-            proba =  model.predict_proba(finalpreprocess(random_commentary))
+            prediction = model.predict(finalpreprocess(random_commentary, model_name))
+            proba =  model.predict_proba(finalpreprocess(random_commentary, model_name))
         else:
             return ["No text specified", "", "", src]
         num_to_cat = {  1:"Attempt", 
