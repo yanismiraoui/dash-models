@@ -16,5 +16,6 @@ This dashboard aims to show how perform the classification models studied in the
 - An audio of the sports commentary is played out loud, please make sure to turn up your volume.
 
 
+![alt text](https://github.com/yanismiraoui/dash-models/blob/master/screenshot_app.jpg)
 
 #### PLEASE NOTE: the website can sometimes be slow to load the text and the predictions. Please wait a few seconds for the content to load.
