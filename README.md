@@ -19,3 +19,6 @@ This dashboard aims to show how perform the classification models studied in the
 ![alt text](https://github.com/yanismiraoui/dash-models/blob/master/screenshot_app.jpg)
 
 #### PLEASE NOTE: the website can sometimes be slow to load the text and the predictions. Please wait a few seconds for the content to load.
+
+
+:link: <a  style="display: inline;"  href="https://github.com/yanismiraoui/Analyzing-sports-commentary-in-order-to-automatically-recognize-events-and-extract-insights"> Github repository of the main analysis
