@@ -1,5 +1,4 @@
 # WEB APP : Analyzing sports commentary in order to automatically recognize events and extract insights
-:link: <a  style="display: inline;"  href="http://35.232.26.227:8050/"> CLICK HERE
 
 This dashboard aims to show how perform the classification models studied in the research paper when given a real live sports commentary sentence or a personnalized one.
 
@@ -21,4 +20,5 @@ This dashboard aims to show how perform the classification models studied in the
 #### PLEASE NOTE: the website can sometimes be slow to load the text and the predictions. Please wait a few seconds for the content to load.
 
 
+:link: <a  style="display: inline;"  href="http://35.232.26.227:8050/"> Website of the demo
 :link: <a  style="display: inline;"  href="https://github.com/yanismiraoui/Analyzing-sports-commentary-in-order-to-automatically-recognize-events-and-extract-insights"> Github repository of the main analysis
