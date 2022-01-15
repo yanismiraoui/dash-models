@@ -1,5 +1,5 @@
 # WEB APP : Analyzing sports commentary in order to automatically recognize events and extract insights
-
+:link: <a  style="display: inline;"  href="http://35.232.26.227:8050/"> CLICK HERE
 
 This dashboard aims to show how perform the classification models studied in the research paper when given a real live sports commentary sentence or a personnalized one.
 
