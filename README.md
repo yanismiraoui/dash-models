@@ -21,4 +21,5 @@ This dashboard aims to show how perform the classification models studied in the
 
 
 :link: <a  style="display: inline;"  href="http://35.232.26.227:8050/"> Website of the demo
+ 
 :link: <a  style="display: inline;"  href="https://github.com/yanismiraoui/Analyzing-sports-commentary-in-order-to-automatically-recognize-events-and-extract-insights"> Github repository of the main analysis
